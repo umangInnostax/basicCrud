@@ -4,8 +4,9 @@ There are two folders:
 - **demo** - for backend
 - **my-app** - for frontend
 
-**Running the code: 
-For Demo:**
+**Running the code:**
+
+**For Demo:**
 - Either use command mvn spring-boot:run in terminal or use extension in your code editor.
 
 **For my-app:**
