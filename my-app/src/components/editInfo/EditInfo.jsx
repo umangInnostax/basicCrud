@@ -15,7 +15,8 @@ export function EditInfo({user}){
             alert("Data is incompleted");
         }
         else{
-            fetch(`http://localhost:8080/practiceCrud/editUserInfo/${user.id}`, {
+            console.log(user);
+            fetch(`http://localhost:8080/practiceCrud/editUserInfo/${user.userId}`, {
                 method: 'PUT',
                 body: JSON.stringify({
                   "name": name,

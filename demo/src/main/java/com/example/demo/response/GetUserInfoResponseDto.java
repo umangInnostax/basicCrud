@@ -1,17 +1,18 @@
-package com.example.demo.RequestDto;
+package com.example.demo.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-public class PracticeCrudRequestDto {
+@AllArgsConstructor
+@NoArgsConstructor
+public class GetUserInfoResponseDto {
+    private Integer userId;
     private String name;
     private String mobileNo;
     private String address;
-    private String position;
+    private String position; 
 }

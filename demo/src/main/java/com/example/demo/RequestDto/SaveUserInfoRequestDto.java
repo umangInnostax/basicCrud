@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PracticeCrudUserInfoEditRequestDto {
+public class SaveUserInfoRequestDto {
     private String name;
     private String mobileNo;
     private String address;

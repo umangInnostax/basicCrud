@@ -51,14 +51,14 @@ export function Home({setUser}){
             </thead>
             <tbody>
             {userInfo.map((user, index)=>(
-                <tr key={user.id}>
+                <tr key={user.userId}>
                     <td>{index+1}</td>
                     <td>{user.name}</td>
                     <td>{user.address}</td>
                     <td>{user.mobileNo}</td>
                     <td>{user.position}</td>
-                    <td><Link onClick={()=>{deleteData(user.id)}}>D</Link></td>
-                    <td key={index}><Link to={"../editUser"} onClick={()=>setUser(user)}>E</Link></td>
+                    <td><Link onClick={()=>{deleteData(user.userId)}}>D</Link></td>
+                    <td key={index}><Link to={"../editUser"} onClick={()=>{console.log(user);setUser(user)}}>E</Link></td>
                 </tr>
             ))}
 
