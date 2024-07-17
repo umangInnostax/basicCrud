@@ -1,7 +1,8 @@
 This is the basic CRUD operation.
+
 There are two folders:
-1> demo - for backend
-2> my-app - for frontend
+- **demo** - for backend
+- **my-app** - for frontend
 
 **Running the code: 
 For Demo:**
