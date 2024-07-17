@@ -1,0 +1,33 @@
+.addInfo{
+    border: 1px solid black;
+    width: 450px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgb(191 188 188 / 20%);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+form table th{
+    text-align: left;
+}
+
+form button{
+    background-color: #0000ffb8;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: blue;
+}
+
+form button:focus{
+    background-color: white;
+    color: black;
+}
