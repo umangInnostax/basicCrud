@@ -1,8 +1,13 @@
 import { useState } from "react"
 import "./AddInfo.css"
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addNewUser } from "../../store/slice/userSlice";
 
 export function AddInfo(){
+
+    //dispatch is use if we have to send some data.
+    const dispatch = useDispatch();
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [mobileNo, setMobileNo] = useState("");
@@ -25,21 +30,25 @@ export function AddInfo(){
                   'Content-type': 'application/json; charset=UTF-8',
                 },
               })
-                 .then((response) => response.text())
-                 .then((data) => {
-                    console.log(data);
-                    // Handle data
+                 .then(response => response.json())
+                 .then((json) => {
+                    if(json){
+                        dispatch(addNewUser(json));
+                        alert("Data saved successfully");
+                        setAddress("");
+                        setName("");
+                        setMobileNo("");
+                        setPosition("");
+                    }
+                    else{
+                        alert("Failed to save the data");
+                    }
                  })
                  .catch((err) => {
                     console.log(err.message);
+                    alert("Failed to save the data");
                     return;
                  });            
-                
-            alert("Data saved successfully");
-            setAddress("");
-            setName("");
-            setMobileNo("");
-            setPosition("");
         }
     }
     return(

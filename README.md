@@ -1,5 +1,7 @@
 This is the basic CRUD operation.
 
+Added redux in react code.
+
 There are two folders:
 - **demo** - for backend
 - **my-app** - for frontend

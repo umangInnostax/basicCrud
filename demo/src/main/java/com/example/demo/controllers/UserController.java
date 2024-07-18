@@ -62,14 +62,17 @@ public class UserController {
 
     @PostMapping("/addUserInfo")
     @ResponseBody
-    public String addUserInfo(@RequestBody SaveUserInfoRequestDto practiceCrudRequestDto){
+    public GetUserInfoResponseDto addUserInfo(@RequestBody SaveUserInfoRequestDto practiceCrudRequestDto){
         try{
             UserEntity practiceEntity = modelMapper.map(practiceCrudRequestDto, UserEntity.class);
-            userRepository.save(practiceEntity);
-            return "Data Saved Successfully";
+            UserEntity userEntity =  userRepository.save(practiceEntity);
+            GetUserInfoResponseDto responseDto = modelMapper.map(userEntity, GetUserInfoResponseDto.class);
+            System.out.println("responseDto = " + responseDto);
+            System.out.println(responseDto.getUserId()+" "+responseDto.getName());
+            return responseDto;
         } catch(Exception e){
             System.out.println("Error message: "+e.getMessage());
-            return "Data cannot be saved";
+            return null;
         }
     }
 
@@ -81,10 +84,10 @@ public class UserController {
                 throw new Exception("User not found with id: "+id);
             }
             userRepository.deleteById(id);
-            return "Data Deleted Successfully";
+            return "SUCCESS";
         } catch(Exception e){
             System.out.println(e.getMessage());
-            return "Data can not be deleted";
+            return "FAILED";
         }
     }
 
